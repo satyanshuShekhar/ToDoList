@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todolist';
+  items = ["Pen", "Pencil", "Shapner", "Books", "Stickers"];
+  newItem = "";
+  pushItem = function(){
+    if(this.newItem != ""){
+      this.items.push(this.newItem);
+      this.newItem = "";
+    }
+  }
+  removeItem = function (index){
+    this.items.splice(index, 1);
+  } 
 }
